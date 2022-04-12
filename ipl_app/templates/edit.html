@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<center>
+		<div style="font-size: 25px">
+		{% if messages %}
+		{% for data in messages %}
+			<b style="color: #264d00;">{{data}}</b>
+		{% endfor %}
+		{% endif %}
+		</div>
+		<div class="Pl_hd"><h2>Edit Team Details</h2></div>
+		<span class="e_nm">Team Name  &nbsp;-&nbsp; {{Team.team_name}}</span>
+		<form method="POST" action="/update/{{Team.id}}">
+				{% csrf_token %}
+		<table class="t1">
+			<tr>
+				<td>Team Name :</td>
+					<td><input type="text" name="team_name" value="{{Team.team_name}}"></td>
+			</tr>
+			<tr>
+				<td>Team Icon :</td>
+					<td><input type="file" name="team_icon" value="{{Team.team_icon}}"></td>
+			</tr>
+			<tr>
+				<td>Player Count :</td>
+					<td><input type="text" name="team_player_count" value="{{Team.team_player_count}}"></td>
+			</tr>
+			<tr>
+				<td>Top Batsman :</td>
+					<td><input type="text" name="team_top_bat" value="{{Team.team_top_bat}}"></td>
+			</tr>
+			<tr>
+				<td>Top Bowler :</td>
+					<td><input type="text" name="team_top_bowl" value="{{Team.team_top_bowl}}"></td>
+			</tr>
+			<tr>
+				<td>Championship Own :</td>
+					<td><input type="text" name="team_won_count" value="{{Team.team_won_count}}"></td>
+			</tr>
+		</table><br>
+	<input class="sub-btn" type="submit" value="Update">
+	</form>
+	</center>
+	
+{% endblock content %}

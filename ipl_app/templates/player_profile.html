@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}	
+	<div class="Pl_hd"><h2>Player Profile</h2></div>
+	<center>
+		<img style="margin-top: 20px;" src="{{player_icon}}">
+		<table class="t1">
+			<tr>
+				<th>Player Name :</th> 
+				<td>{{Player.player_name}}</td>
+			</tr>
+
+			<tr>
+				<th>Player Team :</th> 
+				<td>{{team_name}}</td>
+			</tr>
+
+			<tr>
+				<th>Price :</th> 
+				<td>{{Player.player_price}}</td>
+			</tr>
+
+			<tr>
+				<th>Playing status :</th> 
+				<td>{{Player.player_play_status}}</td>
+			</tr>
+
+			<tr>
+				<th>Role :</th> 
+				<td>{{Player.team_role}}</td>
+			</tr>
+		</table>
+
+		</center>
+
+{% endblock content %}

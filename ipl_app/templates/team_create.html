@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+	<center>
+		<div style="font-size: 25px">
+				{% if messages %}
+				{% for data in messages %}
+					<b style="color: #264d00;">{{data}}</b>
+				{% endfor %}
+				{% endif %}
+		</div>
+		<div class="flip-box">
+		  <div class="flip-box-inner">
+		    <div class="flip-box-front">
+		     <div class="Pl_hd"><h2>Add a New Team</h2> In
+		     	<h1 style="text-align: center;font-size: 40px;">I&nbsp;&nbsp;P&nbsp;&nbsp;L</h1>
+		     </div>
+
+		    </div>
+		    <div class="flip-box-back">
+		       <form method="POST"onsubmit="submit_form()"enctype="multipart/form-data">
+				{% csrf_token %}
+					<table class="t1">
+						<tr>
+							<td>Team Name:</td>
+							<td><input type="text" name="team_name"id="t_name"></td>
+						</tr>
+
+						<tr>
+							<td>Team Icon:</td>
+							<td><input type="file" name="team_icon"id="t_icon"></td>
+						</tr>
+
+						<tr>
+							<td>Player Count :</td>
+							<td><input type="number" name="team_player_count"id="t_player_count" min='0' max='15' style="width: 178px;">
+							</td>
+						</tr>
+
+						<tr>
+							<td>Top Batsman :</td>
+							<td><input type="text" name="team_top_bat"id="t_top_bat"></td>
+						</tr>
+
+						<tr>
+							<td>Top Bowler:</td>
+							<td><input type="text" name="team_top_bowl"id="t_top_bowl"></td>
+						</tr>
+
+						<tr>
+							<td>Championship:</td>
+							<td><input type="text" name="team_won_count"id="t_won_count"></td>
+						</tr>
+
+					</table>
+					<input class="sub-btn" type="submit" value="Add Team">
+				</form>
+			</div>
+		 </div>
+	 </div>
+  </center>
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+	<center>
+		<div style="font-size: 25px">
+				{% if messages %}
+				{% for data in messages %}
+					<b style="color: #264d00;">{{data}}</b>
+				{% endfor %}
+				{% endif %}
+			</div>
+		<div class="Pl_hd"><h2>Add a New Player</h2></div>
+		<form method="POST"onsubmit="submit_form()"enctype="multipart/form-data">
+			{% csrf_token %}
+			<table class="t1">
+				<tr>
+					<td>Player Name :</td>
+					<td><input type="text" name="player_name"id="p-name"></td>
+				</tr>
+
+				<tr>
+					<td>Player Photo :</td>
+					<td><input type="file" name="player_photo"id="p-photo"></td>
+				</tr>
+
+				<tr>
+					<td>Player Team</td>
+					<td>
+						<select name="player_team" id="p-team">
+							<option class="options"></option>
+							{% for team in team_list %}
+							 <option class="options">{{team}}</option>
+							{% endfor %}
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Price</td>
+					<td><input type="text" name="player_price"id="p-price"></td>
+				</tr>
+
+				<tr>
+					<td>Playing Status</td>
+					<td><input type="text" name="player_play_status"id="p-status"></td>
+				</tr>
+
+				<tr>
+					<td>Role</td>
+					<td><input type="text" name="team_role"id="t-role"></td>
+				</tr>
+
+			</table><br>
+			<input class="sub-btn" type="submit"onclick="create()"value="Add Player">
+			<script type="text/javascript">
+				function submit_form(){
+					alert("Player Created successfully");  
+				}
+				function create(){  
+					window.location="player_create.html";  
+				} 
+			</script>
+
+		</form>
+	</center>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<div class="main">
+	  <ul class="cards">
+	  	{% for display in Team %}
+	    <li class="cards_item">
+	      <div style="border: 4px solid #4d0026; border-radius: 25px;" class="card">
+	        <div class="card_image"><img src="{{display.team_icon}}"></div>
+	        <div class="card_content">
+	          <h2 style="color: #330033; font-size: 40px;" class="card_title">{{display.team_name}}</h2>
+	          
+		          	<button class="btn card_btn"style="margin-right:100px;">
+		          		<a href="detail/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center font-weight: 700" style="text-decoration:none;color:rgb(255, 255, 255)">Details</a>
+		          	</button><br>
+
+		          	<button class="btn card_btn">
+		          		<a href="edit/{{display.id}}" class="mt-3 text-indigo-600 inline-flex items-center" style="text-decoration:none;color:rgb(255, 255, 255)">Edit</a>
+		          	</button>
+		          	<button class="btn card_btn"style="float: right;">
+		          		<a href="delete/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center" style="text-decoration:none;color:rgb(255, 255, 255)">Delete</a>
+		          	</button>
+	        </div>
+	      </div>
+	    </li>
+	    {% endfor %}
+	  </ul>
+	</div>
+{% endblock content %}
+
+

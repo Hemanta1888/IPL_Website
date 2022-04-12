@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+		<div class="Pl_hd"><h2>Search Results :</h2></div>
+		<div class="main">
+		  <ul class="cards">
+			  	{% for display in search %}
+			    <li class="cards_item">
+			      <div class="card">
+			        <div class="card_content">
+			          <h2 style="color: #330033; font-size: 45px;" class="card_title">{{display.team_name}}</h2>
+			          <p style="color: #004d00; font-size: 25px" class="card_text">Total Player :{{display.team_player_count}}</p>
+			          <p style="color: #004d00; font-size: 25px" class="card_text">Championship won :{{display.team_won_count}}</p>
+			          <button class="btn card_btn">
+			          		<a href="detail/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">More Details</a>
+			          </button>
+
+			          <button class="btn card_btn">
+			          		<a href="edit/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">Edit</a>
+			          </button>
+
+			          <button class="btn card_btn">
+			          		<a href="delete/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">Delete</a>
+			          </button>
+			        </div>
+			      </div>
+			    </li>
+			    {% endfor %}
+			    <div style="font-size: 25px">
+					{% if messages %}
+						{% for data in messages %}
+							<b style="color: #264d00;">{{data}}</b>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</ul>
+		</div>
+{% endblock content %}
+
+

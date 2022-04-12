@@ -1,0 +1,242 @@
+
+				/* Font */
+		@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+		/* Design */
+		*,
+		*::before,
+		*::after {
+		  box-sizing: border-box;
+		}
+
+		html {
+		  background-color: #b3ffb3;
+		}
+
+		body {
+		  color: #272727;
+		  font-family: 'Quicksand', serif;
+		  font-style: normal;
+		  font-weight: 400;
+		  letter-spacing: 0;
+		  padding: 1rem;
+		}
+
+		.main{
+		  max-width: 1200px;
+		  margin: 0 auto;
+		}
+
+		h1 {
+		    font-size: 24px;
+		    font-weight: 400;
+		    text-align: center;
+		}
+
+		img {
+		  height: auto;
+		  max-width: 100%;
+		  vertical-align: middle;
+		}
+
+		.btn {
+		  color: #ffffff;
+		  padding: 0.8rem;
+		  font-size: 16px;
+		  border-radius: 25px 20px;
+		  font-weight: 400;
+		  display: block;
+		  width: 80px;
+		  height: 40px;
+		  font-family: cursive;
+		  cursor: pointer;
+		  border: 2px solid black;
+		  background: transparent;
+		}
+
+		.btn:hover {
+		  background-color: #cc00cc;
+		}
+
+		.cards {
+		  display: flex;
+		  flex-wrap: wrap;
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		.cards_item {
+		  display: flex;
+		  padding: 1rem;
+		}
+
+		@media (min-width: 40rem) {
+		  .cards_item {
+		    width: 50%;
+		  }
+		}
+
+		@media (min-width: 56rem) {
+		  .cards_item {
+		    width: 33.3333%;
+		  }
+		}
+
+		.card {
+		  background-color: white;
+		  border-radius: 0.25rem;
+		  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+		  display: flex;
+		  flex-direction: column;
+		  overflow: hidden;
+		}
+
+		.card_content {
+		  padding: 1rem;
+		  background: linear-gradient(to bottom left, #6ad94e 40%, #d9590b 100%);
+		}
+
+		.card_title {
+		  color: #ffffff;
+		  font-size: 1.1rem;
+		  font-weight: 700;
+		  letter-spacing: 1px;
+		  text-transform: capitalize;
+		  margin: 0px;
+		}
+
+		.card_text {
+		  color: #ffffff;
+		  font-size: 0.875rem;
+		  line-height: 1.5;
+		  margin-bottom: 1.25rem;    
+		  font-weight: 400;
+		}
+		.made_by{
+		  font-weight: 400;
+		  font-size: 13px;
+		  margin-top: 35px;
+		  text-align: center;
+		}
+		.flip-box {
+		  background-color: transparent;
+		  width: 450px;
+		  height: 390px;
+		  border: 1px solid #f1f1f1;
+		  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+		}
+
+		/* This container is needed to position the front and back side */
+		.flip-box-inner {
+		  position: relative;
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		  transition: transform 0.8s;
+		  transform-style: preserve-3d;
+		}
+
+		/* Do an horizontal flip when you move the mouse over the flip box container */
+		.flip-box:hover .flip-box-inner {
+		  transform: rotateY(180deg);
+		}
+
+		/* Position the front and back side */
+		.flip-box-front, .flip-box-back {
+		  position: absolute;
+		  width: 100%;
+		  height: 100%;
+		  -webkit-backface-visibility: hidden; /* Safari */
+		  backface-visibility: hidden;
+		}
+
+		/* Style the front side */
+		.flip-box-front {
+		  background-color: #00ffff;
+		  color: black;
+		}
+
+		/* Style the back side */
+		.flip-box-back {
+		  color: white;
+		  transform: rotateY(180deg);
+		}
+
+		.Pl_hd{
+			font-size: 20px;
+			text-align: center;
+			text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+			margin-top: 15px;
+			font-family: Segoe Print;
+			
+		}
+
+		.t1{
+			background-color: #5F9EA0;
+			width: 449px;
+			height:380px;
+			border: 5px solid black;
+			border-radius: 25px;
+			margin-top: 10px;
+			border-spacing: 20px;
+		}
+
+		th{
+			font-size: 20px;
+			color: black;
+		}
+		td{
+			font-size: 20px;
+			color: black;
+			font-family: bold,cursive;
+		}
+
+		.e_nm{
+			padding-right: 400px;
+			padding-left: 400px;
+			padding-bottom: 7px;
+			padding-top: 7px;
+			font-size: 30px;
+			font-family: cursive;
+			
+		}
+		.sub-btn{
+			position: relative;
+		    background-color: #f39c12;
+		    border-radius: 50px 20px;
+		    width: 150px;
+		    text-align: center;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		    text-decoration: none;
+		    overflow: hidden;
+		    font-family: cursive;
+		    font-size: 15px;
+		}
+
+		.sub-btn:hover{
+		   background:#fff;
+		   box-shadow:0px 2px 10px 5px #97B1BF;
+		   color:#000;
+		}
+
+		.sub-btn:after {
+		    content: "";
+		    background: #f1c40f;
+		    display: block;
+		    position: absolute;
+		    padding-top: 300%;
+		    padding-left: 350%;
+		    margin-left: -20px !important;
+		    margin-top: -120%;
+		    opacity: 0;
+		    transition: all 0.8s
+		}
+		.sub-btn:active:after {
+		    padding: 0;
+		    margin: 0;
+		    opacity: 1;
+		    transition: 0s
+		}
+			

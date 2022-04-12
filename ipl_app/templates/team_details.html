@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+	<center>
+		<img style="margin-top: 20px;" src="{{team_icon}}">
+
+		<table class="t1">
+			<tr>
+				<th>Team Name :</th> 
+				<td>{{Team.team_name}}</td>
+			</tr>
+
+			<tr>
+				<th>Player Count :</th> 
+				<td>{{Team.team_player_count}}</td>
+			</tr>
+
+			<tr>
+				<th>Top Batsman :</th> 
+				<td>{{Team.team_top_bat}}</td>
+			</tr>
+
+			<tr>
+				<th>Top Bowler :</th> 
+				<td>{{Team.team_top_bowl}}</td>
+			</tr>
+
+			<tr>
+				<th>Championship Own :</th> 
+				<td>{{Team.team_won_count}}</td>
+			</tr>
+			
+		</table>
+		</center>
+		<div class="Pl_hd">Team Players</div>
+
+		
+		<div class="main">
+		  
+		  <ul class="cards">
+		  	{% for display in allplayers %}
+		    <li class="cards_item">
+		      <div class="card">
+		        
+		        <div class="card_content">
+		          <h2 style="color: #330033; font-size: 30px;" class="card_title">{{display.player_name}}</h2>
+		          
+		          <p style="color: #004d00; font-size: 20px" class="card_text">Role :&nbsp;&nbsp;{{display.team_role}}</p>
+		          <button class="btn card_btn">
+		          		<a href="playerdetail/{{display.id}}" class="mt-3 text-indigo-500 inline-flex items-center">Player Info</a>
+		          </button>
+		        </div>
+		      </div>
+		    </li>
+		    {% endfor %}
+		  </ul>
+		</div>
+		
+{% endblock content %}
+
